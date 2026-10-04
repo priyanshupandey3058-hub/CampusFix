@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CampusFix - Admin Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- ===============================
+         HEADER
+    ================================ -->
+
+    <header class="topbar">
+
+        <div>
+            <h1>CampusFix</h1>
+            <p>Admin Dashboard</p>
+        </div>
+
+        <button
+            class="logout-btn"
+            onclick="adminLogout()">
+            Logout
+        </button>
+
+    </header>
+
+
+    <!-- ===============================
+         WELCOME
+    ================================ -->
+
+    <section class="welcome">
+
+        <h2>Welcome, Admin 👋</h2>
+
+        <p>
+            Manage, review and track campus complaints
+            from one place.
+        </p>
+
+    </section>
+
+
+    <!-- ===============================
+         STATISTICS
+    ================================ -->
+
+    <h2 class="section-title">
+        📊 Complaint Statistics
+    </h2>
+
+    <section class="admin-stats">
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                📋
+            </div>
+
+            <h2 id="adminTotal">
+                0
+            </h2>
+
+            <p>
+                Total Complaints
+            </p>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                ⏳
+            </div>
+
+            <h2 id="adminPending">
+                0
+            </h2>
+
+            <p>
+                Pending Complaints
+            </p>
+
+        </div>
+
+
+        <div class="admin-stat-card">
+
+            <div class="admin-stat-icon">
+                ✅
+            </div>
+
+            <h2 id="adminResolved">
+                0
+            </h2>
+
+            <p>
+                Resolved Complaints
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ===============================
+         COMPLAINT MANAGEMENT
+    ================================ -->
+
+    <section class="complaints-section">
+
+        <div class="section-heading">
+
+            <div>
+                <h2>
+                    📋 All Complaints
+                </h2>
+
+                <p>
+                    Search and manage reported campus problems.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- Search & Filter -->
+
+        <div class="admin-controls">
+
+            <input
+                type="text"
+                id="searchComplaint"
+                placeholder="🔎 Search by student, title, category or location..."
+                oninput="filterAdminComplaints()"
+            >
+
+
+            <select
+                id="statusFilter"
+                onchange="filterAdminComplaints()"
+            >
+
+                <option value="All">
+                    All Status
+                </option>
+
+                <option value="Submitted">
+                    Submitted
+                </option>
+
+                <option value="In Progress">
+                    In Progress
+                </option>
+
+                <option value="Resolved">
+                    Resolved
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- Complaints List -->
+
+        <div id="adminComplaintsList">
+
+            <div class="no-complaints">
+
+                <h3>
+                    📭 No Complaints Available
+                </h3>
+
+                <p>
+                    Complaints submitted by students
+                    will appear here.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

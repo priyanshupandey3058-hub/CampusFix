@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CampusFix - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="dashboard">
+
+        <header class="topbar">
+            <div>
+                <h1>CampusFix</h1>
+                <p>Student Dashboard</p>
+            </div>
+
+            <div class="profile-icon">👤</div>
+
+            <button onclick="logout()">Logout</button>
+        </header>
+
+        <section class="welcome">
+            <h2>Welcome, Student 👋</h2>
+            <p>
+                Report campus problems and help make your college better.
+            </p>
+        </section>
+
+        <h2 class="section-title">Quick Actions</h2>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">📝</div>
+                <h3>Report a Problem</h3>
+                <p>Report any issue in your campus.</p>
+                <button onclick="window.location.href='report.html'">
+                    Report Now
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📋</div>
+                <h3>My Complaints</h3>
+                <p>View your submitted complaints.</p>
+                <button onclick="myComplaints()">
+                    View Complaints
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">📊</div>
+                <h3>Complaint Status</h3>
+                <p>Track the progress of your complaints.</p>
+                <button onclick="complaintStatus()">
+                    Track Status
+                </button>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">👤</div>
+                <h3>My Profile</h3>
+                <p>View your student information.</p>
+                <button onclick="myProfile()">
+                    View Profile
+                </button>
+            </div>
+
+        </div>
+
+        <!-- STATISTICS -->
+
+        <section class="stats">
+
+            <div>
+                <h3 id="totalComplaints">0</h3>
+                <p>Total Complaints</p>
+            </div>
+
+            <div>
+                <h3 id="inProgress">0</h3>
+                <p>Pending</p>
+            </div>
+
+            <div>
+                <h3 id="resolved">0</h3>
+                <p>Resolved</p>
+            </div>
+
+        </section>
+
+        <!-- MY COMPLAINTS / STATUS / PROFILE -->
+
+        <section id="complaintsSection"
+                 class="complaints-section"
+                 style="display: none;">
+
+            <h2 id="detailsHeading">📋 My Complaints</h2>
+
+            <div id="complaintsList"></div>
+
+        </section>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
